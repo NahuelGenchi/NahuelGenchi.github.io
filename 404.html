@@ -6,10 +6,13 @@
 <meta name="robots" content="noindex">
 <title>Page not found</title>
 <script>
-  // Renamed projects: an old address goes on to the same page under the new name, with its query and fragment.
-  const moved = { 'onsoku-advance': 'sonic-advance-dreamport' };
+  // Moved projects: an old address goes on to the same page at the new home, with its query and fragment.
+  const moved = {
+    'onsoku-advance': 'https://dreamports.net/play/sonic-advance/',
+    'sonic-advance-dreamport': 'https://dreamports.net/play/sonic-advance/'
+  };
   const [, first, ...rest] = location.pathname.split('/');
-  if (moved[first]) location.replace('/' + [moved[first], ...rest].join('/') + location.search + location.hash);
+  if (moved[first]) location.replace(moved[first] + rest.join('/') + location.search + location.hash);
 </script>
 <style>
   :root { color-scheme: light dark; --bg: #ffffff; --ink: #0b1240; --muted: #4a5577; --link: #1f5fe0; }
@@ -24,7 +27,7 @@
 <body>
 <main>
   <h1>Page not found</h1>
-  <p>Looking for <a href="/sonic-advance-dreamport/">Sonic Advance Dreamport</a>?</p>
+  <p>Looking for <a href="https://dreamports.net/play/sonic-advance/">Sonic Advance Dreamport</a>?</p>
 </main>
 </body>
 </html>
